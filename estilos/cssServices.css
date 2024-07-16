@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Poppins:wght@700&family=Roboto&display=swap');
+
+.service-page {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.407);
+}
+
+.service-content {
+  position: relative;
+  color: #fff;
+}
+
+.service-title {
+  font-size: 36px;
+  
+  margin-top: 80px;
+  margin-bottom: 20px;
+  z-index: 2;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.service-description {
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 20px;
+  color: #fff;
+  z-index: 2;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+
+@media (max-width: 768px) {
+  .service-page {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .service-title {
+    font-size: 28px;
+  }
+
+  .service-description {
+    font-size: 16px;
+    max-width: 100%;
+  }
+}
+
+.gallery-container {
+  background: linear-gradient(to bottom, rgba(22, 9, 9, 0.729), rgba(5, 5, 5, 0.888)), url("https://cdnb.artstation.com/p/assets/images/images/012/558/335/4k/edgars-soiko-7.jpg?1544011049");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.image {
+  position: relative;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.image:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.overlay img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.overlay .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.overlay .arrow.prev {
+  left: 10px;
+}
+
+.overlay .arrow.next {
+  right: 10px;
+}
+
+.description {
+  background-color: #f1f1f1;
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1 1 33.33%;
+  padding: 10px;
+}
+
+.column img {
+  width: 80%;
+  height: auto;
+  transition: transform 0.3s ease;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.column:hover img {
+  transform: scale(1.1);
+}
+
+
+.column h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-family: 'Kanit', sans-serif;
+  background: linear-gradient(90deg, #000000, #0d4a9a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.column p {
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Estilos para hacerlo responsive */
+@media (max-width: 768px) {
+  .column {
+    flex: 1 1 100%;
+  }
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
